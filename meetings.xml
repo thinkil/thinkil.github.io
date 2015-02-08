@@ -1,0 +1,25 @@
+<calendar>
+
+<meeting>
+	<topic>space</topic>
+	<leader>Leader</leader>
+	<date>March 12, 2012</date>
+	<time>10:30am</time>
+	<location>151 Loomis</location>
+</meeting>
+
+<group>
+	<date>March 13, 2012</date>
+	<location>Noyes Auditorium</location>
+	<time>6:30pm</time>
+</group>
+
+<meeting>
+	<topic>Dorm Life</topic>
+	<leader>Pierce Hadley</leader>
+	<date>November 16, 2014</date>
+	<time>4:00pm</time>
+	<location>ISR 29B</location>
+</meeting>
+
+</calendar>

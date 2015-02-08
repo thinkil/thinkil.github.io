@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Think Illinois</title>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<link rel="shortcut icon" href="images/favicon.ico" />
+</head>
+
+<body>
+
+<div class="header">Meetings</div>
+
+<div style="display: none;"><div class="btext">The next main Think Illinois meeting will be on <b id="mdate"> </b> at <b id="mtime"> </b> in <b id="mloc"> </b>. The topic for this meeting is <b id="mtop"> </b>.</div>
+<div class="btext"><b id="mlead"> </b> will be leading a group discussion and meeting on this topic on <b id="gdate"> </b> at <b id="gtime"> </b> in <b id="gloc"> </b>.</div>
+<div class="btext">For links relating to the next meeting's topic, please visit the <a href="members.html">members portal</a>.</div></div>
+<div class="subheader">Previous Meetings</div>
+
+<script>
+xmlhttp = new XMLHttpRequest();
+xmlhttp.open('GET', '/meetings.xml', false);
+xmlhttp.send();
+xmlDoc = xmlhttp.responseXML;
+
+var meet = xmlDoc.getElementsByTagName('meeting');
+var group = xmlDoc.getElementsByTagName('group');
+var mdate = meet[0].getElementsByTagName('date')[0].childNodes[0].nodeValue;
+var gdate = group[0].getElementsByTagName('date')[0].childNodes[0].nodeValue;
+var mdateo = new Date(Date.parse(mdate))
+var gdateo = new Date(Date.parse(gdate))
+var days = ['Sunday, ', 'Monday, ', 'Tuesday, ', 'Wednesday, ', 'Thursday, ', 'Friday, ', 'Saturday, '];
+
+document.getElementById('mdate').innerHTML = days[mdateo.getDay()] + mdate;
+document.getElementById('mtime').innerHTML = meet[0].getElementsByTagName('time')[0].childNodes[0].nodeValue;
+document.getElementById('mloc').innerHTML = meet[0].getElementsByTagName('location')[0].childNodes[0].nodeValue;
+document.getElementById('mtop').innerHTML = meet[0].getElementsByTagName('topic')[0].childNodes[0].nodeValue;
+document.getElementById('mlead').innerHTML = meet[0].getElementsByTagName('leader')[0].childNodes[0].nodeValue;
+document.getElementById('gdate').innerHTML = days[gdateo.getDay()] + gdate;
+document.getElementById('gtime').innerHTML = group[0].getElementsByTagName('time')[0].childNodes[0].nodeValue;
+document.getElementById('gloc').innerHTML = group[0].getElementsByTagName('location')[0].childNodes[0].nodeValue;
+
+document.write('<table>');
+document.write('<tr><td><b>Date</b></td><td><b>Topic</b></td><td><b>Led by</b></td></tr>')
+for (i = 1; i < meet.length; i++){ 
+	document.write('<tr><td>');
+	document.write(meet[i].getElementsByTagName('date')[0].childNodes[0].nodeValue);
+	document.write('</td><td>');
+	document.write(meet[i].getElementsByTagName('topic')[0].childNodes[0].nodeValue);
+	document.write('</td><td>');
+	document.write(meet[i].getElementsByTagName('leader')[0].childNodes[0].nodeValue);
+	document.write('</td></tr>');
+}
+document.write('</table>');
+</script>
+
+<div class="links">[ <a href="index.html">homepage</a> | <a href="aboutus.html">about us</a> | <b>meetings</b> | <a href="events.html">events</a> | <a href="members.html">members portal</a> ]</div>
+<div class="links">[ <a href="mailto:thinkillinois@gmail.com">thinkillinois@gmail.com</a> | <a href="http://www.facebook.com/thinkillinois">facebook</a> | <a href="http://www.twitter.com/Think_Illinois">twitter</a> ]</div>
+</body>
+</html>

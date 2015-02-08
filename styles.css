@@ -1,0 +1,61 @@
+body {
+	background-color: #000000;
+	background-image: url("images/coverlogo.png"), url("images/backtile.png");
+	background-repeat: no-repeat, repeat-x;
+	background-position: top center, top center;
+	color: #dddddd;
+	font-family: Georgia, serif;
+}
+
+table {
+	margin-left: 10vw;
+}
+
+td {
+	padding-right: 15px;
+}
+
+a:link {
+    color: #f88734;
+}
+
+a:visited {
+    color: #a45822;
+}
+
+a:active {
+    color: #ffffff;
+}
+
+.header {
+	margin-top: 165px;
+	margin-bottom: 15px;
+	text-align: center;
+	font-size: 26pt;
+	font-weight: bolder;
+	letter-spacing: 1px;
+}
+
+.subheader {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-left: 9vw;
+	margin-right: 10vw;;
+	font-size: 16pt;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.btext {
+	font-size: 12pt;
+	margin-left: 10vw;
+	margin-right: 10vw;
+	margin-bottom: 12px;
+}
+
+.links {
+	text-align: center;
+	font-size: 11pt;
+	margin-top: 7px;
+	letter-spacing: 0.8px;
+}
